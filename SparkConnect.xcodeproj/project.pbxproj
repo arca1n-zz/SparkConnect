@@ -12,6 +12,7 @@
 		811806CC197E2265005FF79D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 811806CA197E2265005FF79D /* Main.storyboard */; };
 		811806CE197E2265005FF79D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 811806CD197E2265005FF79D /* Images.xcassets */; };
 		811806DA197E2265005FF79D /* SparkConnectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811806D9197E2265005FF79D /* SparkConnectTests.swift */; };
+		E34F319DE8FE49E4BEB33C68 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E91C23DCAFC14574AAAF1033 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,9 @@
 		811806D3197E2265005FF79D /* SparkConnectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SparkConnectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		811806D8197E2265005FF79D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		811806D9197E2265005FF79D /* SparkConnectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkConnectTests.swift; sourceTree = "<group>"; };
+		811806E3197E2991005FF79D /* SparkConnect-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SparkConnect-Bridging-Header.h"; sourceTree = "<group>"; };
+		BF8FA99DE6CE404D96C11B9C /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		E91C23DCAFC14574AAAF1033 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E34F319DE8FE49E4BEB33C68 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +65,8 @@
 				811806C3197E2265005FF79D /* SparkConnect */,
 				811806D6197E2265005FF79D /* SparkConnectTests */,
 				811806C2197E2265005FF79D /* Products */,
+				BF8FA99DE6CE404D96C11B9C /* Pods.xcconfig */,
+				E6244144F7004068BE3B4DD2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +82,7 @@
 		811806C3197E2265005FF79D /* SparkConnect */ = {
 			isa = PBXGroup;
 			children = (
+				811806E3197E2991005FF79D /* SparkConnect-Bridging-Header.h */,
 				811806C6197E2265005FF79D /* AppDelegate.swift */,
 				811806C8197E2265005FF79D /* ViewController.swift */,
 				811806CA197E2265005FF79D /* Main.storyboard */,
@@ -109,6 +117,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E6244144F7004068BE3B4DD2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E91C23DCAFC14574AAAF1033 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -116,9 +132,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 811806DD197E2265005FF79D /* Build configuration list for PBXNativeTarget "SparkConnect" */;
 			buildPhases = (
+				0D11993D627D4FA4BD42C792 /* Check Pods Manifest.lock */,
 				811806BD197E2265005FF79D /* Sources */,
 				811806BE197E2265005FF79D /* Frameworks */,
 				811806BF197E2265005FF79D /* Resources */,
+				0382844821424950B3829304 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -202,6 +220,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0382844821424950B3829304 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0D11993D627D4FA4BD42C792 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		811806BD197E2265005FF79D /* Sources */ = {
@@ -324,6 +375,7 @@
 		};
 		811806DE197E2265005FF79D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF8FA99DE6CE404D96C11B9C /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -335,6 +387,7 @@
 		};
 		811806DF197E2265005FF79D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF8FA99DE6CE404D96C11B9C /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -399,6 +452,7 @@
 				811806DF197E2265005FF79D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		811806E0197E2265005FF79D /* Build configuration list for PBXNativeTarget "SparkConnectTests" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +461,7 @@
 				811806E2197E2265005FF79D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
