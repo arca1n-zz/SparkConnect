@@ -12,6 +12,7 @@
 		811806CC197E2265005FF79D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 811806CA197E2265005FF79D /* Main.storyboard */; };
 		811806CE197E2265005FF79D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 811806CD197E2265005FF79D /* Images.xcassets */; };
 		811806DA197E2265005FF79D /* SparkConnectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811806D9197E2265005FF79D /* SparkConnectTests.swift */; };
+		811806E6197E2C74005FF79D /* Test.h in Sources */ = {isa = PBXBuildFile; fileRef = 811806E5197E2C74005FF79D /* Test.h */; };
 		E34F319DE8FE49E4BEB33C68 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E91C23DCAFC14574AAAF1033 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -35,7 +36,8 @@
 		811806D3197E2265005FF79D /* SparkConnectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SparkConnectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		811806D8197E2265005FF79D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		811806D9197E2265005FF79D /* SparkConnectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkConnectTests.swift; sourceTree = "<group>"; };
-		811806E3197E2991005FF79D /* SparkConnect-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SparkConnect-Bridging-Header.h"; sourceTree = "<group>"; };
+		811806E4197E2C74005FF79D /* SparkConnect-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SparkConnect-Bridging-Header.h"; sourceTree = "<group>"; };
+		811806E5197E2C74005FF79D /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
 		BF8FA99DE6CE404D96C11B9C /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		E91C23DCAFC14574AAAF1033 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -82,12 +84,13 @@
 		811806C3197E2265005FF79D /* SparkConnect */ = {
 			isa = PBXGroup;
 			children = (
-				811806E3197E2991005FF79D /* SparkConnect-Bridging-Header.h */,
 				811806C6197E2265005FF79D /* AppDelegate.swift */,
 				811806C8197E2265005FF79D /* ViewController.swift */,
 				811806CA197E2265005FF79D /* Main.storyboard */,
 				811806CD197E2265005FF79D /* Images.xcassets */,
 				811806C4197E2265005FF79D /* Supporting Files */,
+				811806E5197E2C74005FF79D /* Test.h */,
+				811806E4197E2C74005FF79D /* SparkConnect-Bridging-Header.h */,
 			);
 			path = SparkConnect;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				811806E6197E2C74005FF79D /* Test.h in Sources */,
 				811806C9197E2265005FF79D /* ViewController.swift in Sources */,
 				811806C7197E2265005FF79D /* AppDelegate.swift in Sources */,
 			);
@@ -379,9 +383,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SparkConnect/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SparkConnect/SparkConnect-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -391,9 +398,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SparkConnect/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SparkConnect/SparkConnect-Bridging-Header.h";
 			};
 			name = Release;
 		};
